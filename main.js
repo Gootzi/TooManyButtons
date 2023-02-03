@@ -26,7 +26,7 @@ function computeTimeStore() {
     game.timestore.stored.add(gain);
 }
 
-setInterval(onTick, 100)
+setInterval(onTick(), 100)
 function onTick() {
 
     let ptsdisp = document.getElementById("pointsdisp");
