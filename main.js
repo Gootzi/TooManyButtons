@@ -22,11 +22,17 @@ function gainNoMult(n) {
     game.points = game.points.add(n);
 }
 function computeTimeStore() {
-    game.timestore.gain = one.div(game.timestore.stored.div(6).pow(game.timestore.spExponent)).mult(game.points.pow(0.05));
+    let one = new OmegaNum(1);
+    let div = game.timestore.stored.div(6);
+    let pow = div.pow(game.timestore.spExponent);
+    let divResult = one.div(pow);
+    let powResult = game.points.pow(0.05);
+    let multResult = divResult.mult(powResult);
+    game.timestore.Gain = multResult;
     game.timestore.stored.add(gain);
 }
 
-setInterval(onTick(), 100)
+setInterval(onTick, 100)
 function onTick() {
 
     let ptsdisp = document.getElementById("pointsdisp");
