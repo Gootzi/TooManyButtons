@@ -1,6 +1,7 @@
 
 //OmegaNum was made by naruyoko (https://naruyoko.github.io/OmegaNum.js/)
-//OmegaNum (collapse)
+
+import OmegaNum from "./OmegaNum.js"
 
 
 var one = new OmegaNum(1)
