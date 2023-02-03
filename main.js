@@ -30,7 +30,7 @@ function gainNoMult(n) {
     game.points = game.points.add(n);
 }
 function computeTimeStore() {
-    game.timestore.gain = one.div(game.timestore.stored.div(6).pow(game.timestore.spExponent)).mult(game.points.pow(0.05));
+    game.timestore.gain = one.div(game.timestore.stored.div(6).pow(game.timestore.spExponent))).mult(game.points.pow(0.05);
     game.timestore.stored.add(gain);
 }
 
