@@ -34,7 +34,7 @@ function computeTimeStore() {
 
 setInterval(onTick, 100)
 function onTick() {
-
+    computeTimeStore()
     let ptsdisp = document.getElementById("pointsdisp");
     ptsdisp.textContent = "Points: " + game.points;
     let tsdisp = document.getElementById("timestorebutton");
