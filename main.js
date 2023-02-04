@@ -7,6 +7,9 @@ var game = {
         gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
         }
+    autobuyer: {
+        autobuyerPoints: new OmegaNum(0)
+        }
 }
 let date = new Date();
 
