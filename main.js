@@ -6,7 +6,7 @@ var game = {
         stored: new OmegaNum(1),
         gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
-        },
+        }
     autobuy: {
         autobuyerPoints: {
             cost: new OmegaNum(500),
@@ -14,9 +14,6 @@ var game = {
         }
 };
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function gain(n) {
     game.points = game.points.add(n).mul(game.pointmult);
