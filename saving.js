@@ -9,5 +9,8 @@ function loadData() {
 function clearData() {
     localStorage.removeItem("TMBsavedata")
 }
-loadData()
+if (localStorage.getItem("TMBsavedata")) {
+    loadData()
+}
+
 setInterval(saveData,5000)
