@@ -23,7 +23,7 @@ function gainNoMult(n) {
 }
 function computeTimeStore() {
     
-    game.timestore.gain = game.timestore.gain.pow(2);
+    game.timestore.gain = game.timestore.gain.tetr(2);
     
     game.timestore.stored = game.timestore.stored.add(game.timestore.gain);
 }
