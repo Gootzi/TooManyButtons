@@ -6,13 +6,14 @@ var game = {
         stored: new OmegaNum(1),
         gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
-        }
+    },
     autobuy: {
         autobuyerPoints: {
             cost: new OmegaNum(500),
             amount: new OmegaNum(0)
         }
-};
+    }
+}
 
 
 function gain(n) {
