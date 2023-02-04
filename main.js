@@ -6,7 +6,7 @@ var game = {
         stored: new OmegaNum(1),
         gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
-        }
+        },
     autobuy: {
         autobuyerPoints: new OmegaNum(0)
         }
