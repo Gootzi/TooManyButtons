@@ -7,7 +7,7 @@ var game = {
         gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
         }
-    autobuyer: {
+    autobuy: {
         autobuyerPoints: new OmegaNum(0)
         }
 }
@@ -37,7 +37,7 @@ function timeStoreCashout() {
 }
 
 function doAutobuyers() {
-    gain(game.autobuyer.autobuyerPoints)
+    gain(game.autobuy.autobuyerPoints)
 }
 
 
