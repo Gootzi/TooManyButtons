@@ -12,7 +12,7 @@ var game = {
             cost: new OmegaNum(500),
             amount: new OmegaNum(0)
         }
-}
+};
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
