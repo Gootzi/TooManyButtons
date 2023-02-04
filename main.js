@@ -4,7 +4,7 @@ var game = {
     pointmult: new OmegaNum(1),
     timestore: {
         stored: new OmegaNum(1),
-        gain: new OmegaNum(1),
+        gain: new OmegaNum(2),
         spExponent: new OmegaNum(0.6)
         }
 }
