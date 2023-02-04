@@ -13,7 +13,6 @@ var game = {
             amount: new OmegaNum(0)
         }
 }
-let date = new Date();
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
