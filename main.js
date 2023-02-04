@@ -23,10 +23,15 @@ function gainNoMult(n) {
 }
 function computeTimeStore() {
     
-    game.timestore.gain = game.timestore.gain.tetr(2);
+    game.timestore.gain = new OmegaNum(1).div(game.timestore.stored.div(new OmegaNum(6).pow(game.timestore.spExponent))).mul(game.points.pow(new OmegaNum(0.05)))
     
     game.timestore.stored = game.timestore.stored.add(game.timestore.gain);
 }
+
+function timeStoreCashout() {
+    
+}
+
 
 setInterval(onTick, 100)
 function onTick() {
