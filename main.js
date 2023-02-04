@@ -29,6 +29,8 @@ function computeTimeStore() {
 }
 
 function timeStoreCashout() {
+    gain(game.timestore.stored)
+    game.timestore.stored = 1
     
 }
 
