@@ -48,5 +48,5 @@ function onTick() {
     let ptsdisp = document.getElementById("pointsdisp");
     ptsdisp.textContent = "Points: " + game.points;
     let tsdisp = document.getElementById("timestorebutton");
-    tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mult(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
+    tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mul(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
 }
