@@ -6,5 +6,8 @@ function loadData() {
     game.points = new OmegaNum(splitSave[0])
     game.timestore.stored = new OmegaNum(splitSave[1])
 }
+function clearData() {
+    localStorage.removeItem("TMBsavedata")
+}
 loadData()
 setInterval(saveData,5000)
