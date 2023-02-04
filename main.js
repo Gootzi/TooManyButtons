@@ -8,7 +8,9 @@ var game = {
         spExponent: new OmegaNum(0.6)
         },
     autobuy: {
-        autobuyerPoints: new OmegaNum(0)
+        autobuyerPoints: {
+            cost: new OmegaNum(500)
+            amount: new OmegaNum(0)
         }
 }
 let date = new Date();
@@ -37,16 +39,19 @@ function timeStoreCashout() {
 }
 
 function doAutobuyers() {
-    gain(game.autobuy.autobuyerPoints)
+    gain(game.autobuy.autobuyerPoints.amount)
 }
 
+function buyPointAutobuyer() {
+    gain(game.autobuy.autobuyerPoints.cost.mul(-1))
+}
 
 setInterval(onTick, 100)
 function onTick() {
     computeTimeStore()
     doAutobuyers()
     let ptsdisp = document.getElementById("pointsdisp");
-    ptsdisp.textContent = "Points: " + game.points;
+    ptsdisp.textContent = "Points: " + game.points.floor();
     let tsdisp = document.getElementById("timestorebutton");
     tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mul(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
 }
