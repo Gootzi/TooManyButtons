@@ -9,7 +9,7 @@ var game = {
         },
     autobuy: {
         autobuyerPoints: {
-            cost: new OmegaNum(500)
+            cost: new OmegaNum(500),
             amount: new OmegaNum(0)
         }
 }
