@@ -36,6 +36,7 @@ marquee {
 
 .autobuyersDiv {
     bottom: 0px;
-    height: fit-content;
+    height: 200px;
+    width: 100px;
     border: 2px solid white;
 }
