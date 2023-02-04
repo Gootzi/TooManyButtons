@@ -34,5 +34,5 @@ function onTick() {
     let ptsdisp = document.getElementById("pointsdisp");
     ptsdisp.textContent = "Points: " + game.points;
     let tsdisp = document.getElementById("timestorebutton");
-    tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored + " points stored";
+    tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored + " points stored<br>+" + game.timestore.gain + " per tick";
 }
