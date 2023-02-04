@@ -34,13 +34,17 @@ function computeTimeStore() {
 function timeStoreCashout() {
     gain(game.timestore.stored)
     game.timestore.stored = new OmegaNum(1)
-    
+}
+
+function doAutobuyers() {
+    gain(game.autobuyer.autobuyerPoints)
 }
 
 
 setInterval(onTick, 100)
 function onTick() {
     computeTimeStore()
+    doAutobuyers()
     let ptsdisp = document.getElementById("pointsdisp");
     ptsdisp.textContent = "Points: " + game.points;
     let tsdisp = document.getElementById("timestorebutton");
