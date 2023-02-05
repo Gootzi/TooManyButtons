@@ -41,8 +41,9 @@ function doAutobuyers() {
 
 function buyPointAutobuyer() {
     if (game.points.gte(game.autobuy.autobuyerPoints.cost)) {
-        gain(game.autobuy.autobuyerPoints.cost.mul(-1))
-        game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(1)
+        gain(game.autobuy.autobuyerPoints.cost.mul(-1));
+        game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(1);
+        game.autobuy.autobuyerPoints.cost = game.autobuy.autobuyerPoints.cost.mul(1.15);
     }
 }
 
