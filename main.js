@@ -36,7 +36,7 @@ function timeStoreCashout() {
 }
 
 function doAutobuyers() {
-    gain(game.autobuy.autobuyerPoints.amount)
+    gain(game.autobuy.autobuyerPoints.amount.mul(game.pointMult))
 }
 
 function buyPointAutobuyer() {
