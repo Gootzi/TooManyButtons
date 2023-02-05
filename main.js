@@ -56,5 +56,5 @@ function onTick() {
     let tsdisp = document.getElementById("timestorebutton");
     tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mul(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
     let a1disp = document.getElementById("a1button");
-    a1disp.innerHTML = "Autobuy Points<br><br>" + game.autobuy.autobuyerPoints.amount + "<br>Cost: " + game.autobuy.autobuyerPoints.cost
+    a1disp.innerHTML = "Autobuy Points<br><br>" + game.autobuy.autobuyerPoints.amount + "<br>Cost: " + game.autobuy.autobuyerPoints.cost.floor()
 }
