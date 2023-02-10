@@ -52,6 +52,15 @@ function buyPointAutobuyer() {
     }
 }
 
+function buyPointAutobuyer2() {
+    if (game.points.gte(game.autobuy.autobuyerPoints2.cost)) {
+        gain(game.autobuy.autobuyerPoints2.cost.mul(-1));
+        game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(1);
+        game.autobuy.autobuyerPoints2.cost = game.autobuy.autobuyerPoints2.cost.mul(1.15);
+    }
+}
+
+
 setInterval(onTick, 100)
 function onTick() {
     computeTimeStore()
