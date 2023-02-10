@@ -15,6 +15,10 @@ var game = {
         autobuyerPoints2: {
             cost: new OmegaNum(50000),
             amount: new OmegaNum(0)
+        },
+        autobuyerPoints3: {
+            cost: new OmegaNum(5000000),
+            amount: new OmegaNum(0)
         }
     }
 }
@@ -42,6 +46,7 @@ function timeStoreCashout() {
 function doAutobuyers() {
     gain(game.autobuy.autobuyerPoints.amount)
     game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(game.autobuy.autobuyerPoints2.amount);
+    game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(game.autobuy.autobuyerPoints3.amount);
 }
 
 function buyPointAutobuyer() {
@@ -60,6 +65,14 @@ function buyPointAutobuyer2() {
     }
 }
 
+function buyPointAutobuyer3() {
+    if (game.points.gte(game.autobuy.autobuyerPoints3.cost)) {
+        gain(game.autobuy.autobuyerPoints3.cost.mul(-1));
+        game.autobuy.autobuyerPoints3.amount = game.autobuy.autobuyerPoints3.amount.add(1);
+        game.autobuy.autobuyerPoints3.cost = game.autobuy.autobuyerPoints3.cost.mul(1.15);
+    }
+}
+
 
 setInterval(onTick, 100)
 function onTick() {
@@ -70,7 +83,9 @@ function onTick() {
     let tsdisp = document.getElementById("timestorebutton");
     tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mul(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
     let a1disp = document.getElementById("a1button");
-    a1disp.innerHTML = "Autobuy Points<br><br>" + game.autobuy.autobuyerPoints.amount + "<br>Cost: " + game.autobuy.autobuyerPoints.cost.floor()
+    a1disp.innerHTML = "Pointmaker I<br><br>" + game.autobuy.autobuyerPoints.amount + "<br>Cost: " + game.autobuy.autobuyerPoints.cost.floor()
     let a2disp = document.getElementById("a2button");
-    a2disp.innerHTML = "Autobuy Points 2<br><br>" + game.autobuy.autobuyerPoints2.amount + "<br>Cost: " + game.autobuy.autobuyerPoints2.cost.floor()
+    a2disp.innerHTML = "Pointmaker II<br><br>" + game.autobuy.autobuyerPoints2.amount + "<br>Cost: " + game.autobuy.autobuyerPoints2.cost.floor()
+    let a3disp = document.getElementById("a3button");
+    a3disp.innerHTML = "Pointmaker III<br><br>" + game.autobuy.autobuyerPoints3.amount + "<br>Cost: " + game.autobuy.autobuyerPoints3.cost.floor()
 }
