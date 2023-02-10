@@ -39,4 +39,6 @@ marquee {
     height: 300px;
     width: 200px;
     border: 2px solid white;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
