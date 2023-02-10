@@ -11,6 +11,10 @@ var game = {
         autobuyerPoints: {
             cost: new OmegaNum(500),
             amount: new OmegaNum(0)
+        },
+        autobuyerPoints2: {
+            cost: new OmegaNum(50000),
+            amount: new OmegaNum(0)
         }
     }
 }
@@ -57,4 +61,6 @@ function onTick() {
     tsdisp.innerHTML = "Time Store<br><br>" + game.timestore.stored.floor() + " points stored<br>+" + game.timestore.gain.mul(new OmegaNum(1000)).floor().div(new OmegaNum(1000)) + " per tick";
     let a1disp = document.getElementById("a1button");
     a1disp.innerHTML = "Autobuy Points<br><br>" + game.autobuy.autobuyerPoints.amount + "<br>Cost: " + game.autobuy.autobuyerPoints.cost.floor()
+    let a1disp = document.getElementById("a2button");
+    a1disp.innerHTML = "Autobuy Points 2<br><br>" + game.autobuy.autobuyerPoints2.amount + "<br>Cost: " + game.autobuy.autobuyerPoints2.cost.floor()
 }
