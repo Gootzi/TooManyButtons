@@ -30,6 +30,12 @@
         <button id="u1button" onclick="">Multiply points by 2<br>Currently: X<br><br>Costs Y points</button>
     </div>
     
+    <div class="debugDiv">
+        <h2>Debug</h2>
+        <button id="d1button" onclick="game.points = game.points.exp(1000);">Debug 1 (^1000)</button>
+        <button id="d1button" onclick="game.points = game.points.mul(1000);">Debug 2 (x1000)</button>
+    </div>
+    
     <button onclick="saveData()">Save Data</button>
     <button onclick="clearData()">Clear Data</button>
     
