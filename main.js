@@ -10,15 +10,18 @@ var game = {
     autobuy: {
         autobuyerPoints: {
             cost: new OmegaNum(500),
-            amount: new OmegaNum(0)
+            amount: new OmegaNum(0),
+            scaling: new OmegaNum(1.3)
         },
         autobuyerPoints2: {
             cost: new OmegaNum(50000),
-            amount: new OmegaNum(0)
+            amount: new OmegaNum(0),
+            scaling: new OmegaNum(2.5)
         },
         autobuyerPoints3: {
             cost: new OmegaNum(5000000),
-            amount: new OmegaNum(0)
+            amount: new OmegaNum(0),
+            scaling: new OmegaNum(5)
         }
     }
 }
@@ -53,7 +56,7 @@ function buyPointAutobuyer() {
     if (game.points.gte(game.autobuy.autobuyerPoints.cost)) {
         gain(game.autobuy.autobuyerPoints.cost.mul(-1));
         game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(1);
-        game.autobuy.autobuyerPoints.cost = game.autobuy.autobuyerPoints.cost.mul(1.15);
+        game.autobuy.autobuyerPoints.cost = game.autobuy.autobuyerPoints.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
 }
 
@@ -61,7 +64,7 @@ function buyPointAutobuyer2() {
     if (game.points.gte(game.autobuy.autobuyerPoints2.cost)) {
         gain(game.autobuy.autobuyerPoints2.cost.mul(-1));
         game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(1);
-        game.autobuy.autobuyerPoints2.cost = game.autobuy.autobuyerPoints2.cost.mul(1.15);
+        game.autobuy.autobuyerPoints2.cost = game.autobuy.autobuyerPoints2.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
 }
 
@@ -69,7 +72,7 @@ function buyPointAutobuyer3() {
     if (game.points.gte(game.autobuy.autobuyerPoints3.cost)) {
         gain(game.autobuy.autobuyerPoints3.cost.mul(-1));
         game.autobuy.autobuyerPoints3.amount = game.autobuy.autobuyerPoints3.amount.add(1);
-        game.autobuy.autobuyerPoints3.cost = game.autobuy.autobuyerPoints3.cost.mul(1.15);
+        game.autobuy.autobuyerPoints3.cost = game.autobuy.autobuyerPoints3.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
 }
 
