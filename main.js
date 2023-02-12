@@ -23,6 +23,15 @@ var game = {
             amount: new OmegaNum(0),
             scaling: new OmegaNum(5)
         }
+    },
+    upgrades: {
+        mult: {
+            cost: new OmegaNum(5000000),
+            amount: new OmegaNum(0),
+            onbought: function() {
+                
+            }
+        }
     }
 }
 
