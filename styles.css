@@ -51,3 +51,19 @@ marquee {
     overflow-x: hidden;
     overflow-y: scroll;
 }
+.normalDiv {
+    border: 2px solid yellow;
+    color: yellow;
+}
+.infinityDiv {
+    border: 2px solid purple;
+    color: purple;
+}
+.eternityDiv {
+    border: 2px solid cyan;
+    color: cyan;
+}
+.paragonDiv {
+    border: 2px solid pink;
+    color: pink;
+}
