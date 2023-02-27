@@ -28,9 +28,7 @@ var game = {
         mult: {
             cost: new OmegaNum(5000000),
             amount: new OmegaNum(0),
-            onbought: function() {
-                
-            }
+            scaling: new OmegaNum(3.5)
         }
     }
 }
@@ -82,6 +80,15 @@ function buyPointAutobuyer3() {
         gain(game.autobuy.autobuyerPoints3.cost.mul(-1));
         game.autobuy.autobuyerPoints3.amount = game.autobuy.autobuyerPoints3.amount.add(1);
         game.autobuy.autobuyerPoints3.cost = game.autobuy.autobuyerPoints3.cost.mul(game.autobuy.autobuyerPoints.scaling);
+    }
+}
+
+function buyPointMult() {
+    if (game.points.gte(game.upgrades.mult.cost)) {
+        gain(game.upgrades.mult.cost.mul(-1));
+        game.upgrades.mult.amount = game.upgrades.mult.amount.add(1);
+        game.upgrades.mult.cost = game.upgrades.mult.cost.mul(game.upgrades.mult.scaling);
+        game.pointmult = game.pointmult.mul(2);
     }
 }
 
