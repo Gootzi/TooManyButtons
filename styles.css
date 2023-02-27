@@ -37,21 +37,19 @@ marquee {
 .autobuyersDiv {
     top: 0px;
     height: 300px;
-    width: 400px;
+    width: 200px;
     border: 2px solid white;
     overflow-x: hidden;
     overflow-y: scroll;
-    float: left;
 }
 
 .upgradesDiv {
     top: 0px;
     height: 300px;
-    width: 400px;
+    width: 200px;
     border: 2px solid white;
     overflow-x: hidden;
     overflow-y: scroll;
-    float: left;
 }
 .normalDiv {
     border: 2px solid yellow;
