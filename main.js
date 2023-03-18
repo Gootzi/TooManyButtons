@@ -30,6 +30,11 @@ var game = {
             amount: new OmegaNum(0),
             scaling: new OmegaNum(3.5)
         }
+    },
+    pointling: {
+        amount: new OmegaNum(0),
+        cost: new OmegaNum(0),
+        scaling: new OmegaNum(1.75)
     }
 }
 
@@ -87,8 +92,15 @@ function buyPointMult() {
     if (game.points.gte(game.upgrades.mult.cost)) {
         gain(game.upgrades.mult.cost.mul(-1));
         game.upgrades.mult.amount = game.upgrades.mult.amount.add(1);
-        game.upgrades.mult.cost = game.upgrades.mult.cost.mul(game.upgrades.mult.scaling);
         game.pointmult = game.pointmult.mul(2);
+        game.upgrades.mult.cost = game.upgrades.mult.cost.mul(game.upgrades.mult.scaling);
+    }
+}
+
+function buyPointling() {
+    if (game.points.gte(game.pointling.cost)) {
+        gain(game.pointling.cost.mul(-1));
+        game.pointling.amount = game.pointling.amount.add(1);
     }
 }
 
