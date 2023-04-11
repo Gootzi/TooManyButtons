@@ -68,7 +68,7 @@ function doAutobuyers() {
 
 function buyPointAutobuyer() {
     if (game.points.gte(game.autobuy.autobuyerPoints.cost)) {
-        gain(game.autobuy.autobuyerPoints.cost.mul(-1));
+        gainNoMult(game.autobuy.autobuyerPoints.cost.mul(-1));
         game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(1);
         game.autobuy.autobuyerPoints.cost = game.autobuy.autobuyerPoints.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
@@ -76,7 +76,7 @@ function buyPointAutobuyer() {
 
 function buyPointAutobuyer2() {
     if (game.points.gte(game.autobuy.autobuyerPoints2.cost)) {
-        gain(game.autobuy.autobuyerPoints2.cost.mul(-1));
+        gainNoMult(game.autobuy.autobuyerPoints2.cost.mul(-1));
         game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(1);
         game.autobuy.autobuyerPoints2.cost = game.autobuy.autobuyerPoints2.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
@@ -84,7 +84,7 @@ function buyPointAutobuyer2() {
 
 function buyPointAutobuyer3() {
     if (game.points.gte(game.autobuy.autobuyerPoints3.cost)) {
-        gain(game.autobuy.autobuyerPoints3.cost.mul(-1));
+        gainNoMult(game.autobuy.autobuyerPoints3.cost.mul(-1));
         game.autobuy.autobuyerPoints3.amount = game.autobuy.autobuyerPoints3.amount.add(1);
         game.autobuy.autobuyerPoints3.cost = game.autobuy.autobuyerPoints3.cost.mul(game.autobuy.autobuyerPoints.scaling);
     }
@@ -92,7 +92,7 @@ function buyPointAutobuyer3() {
 
 function buyPointMult() {
     if (game.points.gte(game.upgrades.mult.cost)) {
-        gain(game.upgrades.mult.cost.mul(-1));
+        gainNoMult(game.upgrades.mult.cost.mul(-1));
         game.upgrades.mult.amount = game.upgrades.mult.amount.add(1);
         game.pointmult = game.pointmult.mul(2);
         game.upgrades.mult.cost = game.upgrades.mult.cost.mul(game.upgrades.mult.scaling);
@@ -101,7 +101,7 @@ function buyPointMult() {
 
 function buyPointling() {
     if (game.points.gte(game.pointling.cost)) {
-        gain(game.pointling.cost.mul(-1));
+        gainNoMult(game.pointling.cost.mul(-1));
         game.pointling.amount = game.pointling.amount.add(1);
         game.pointling.cost = game.pointling.cost.mul(game.pointling.scaling);
     }
