@@ -1,5 +1,6 @@
 // FlattenArray courtesy of ChatGPT
 
+
 function flattenArray(arr) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
@@ -31,19 +32,20 @@ function updateArrayValues(arr, flatArr) {
 
 
 function saveData() {
-    var saveString = flattenArray(game).map(x => x.toString()).join('|')
-    localStorage.setItem("TMBsavedata",saveString)
+    var saveString = flattenArray(game).map(x => x.toString()).join('|');
+    localStorage.setItem("TMBsavedata",saveString);
 }
 function loadData() {
-    
-    var saveTable = updateArrayValues(game,saveString.split("|"))
-    const splitSave = localStorage.getItem("TMBsavedata").split("|").map(x => new OmegaNum(x));
+    var saveString = localStorage.getItem("TMBsavedata");
+    var saveTable = updateArrayValues(game,saveString.split("|"));
+    const splitSave = saveTable.map(x => new OmegaNum(x));
+    game = splitSave
 }
 function clearData() {
-    localStorage.removeItem("TMBsavedata")
+    localStorage.removeItem("TMBsavedata");
 }
 if (localStorage.getItem("TMBsavedata")) {
-    loadData()
+    loadData();
 }
 
 setInterval(saveData,5000)
