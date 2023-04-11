@@ -37,7 +37,7 @@ function saveData() {
 function loadData() {
     
     var saveTable = updateArrayValues(game,saveString.split("|"))
-    const splitSave = localStorage.getItem("TMBsavedata").split("|");
+    const splitSave = localStorage.getItem("TMBsavedata").split("|").map(x => new OmegaNum(x));
 }
 function clearData() {
     localStorage.removeItem("TMBsavedata")
