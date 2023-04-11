@@ -33,7 +33,7 @@ var game = {
     },
     pointling: {
         amount: new OmegaNum(0),
-        cost: new OmegaNum(0),
+        cost: new OmegaNum(12500),
         scaling: new OmegaNum(1.75)
     }
 }
@@ -101,6 +101,7 @@ function buyPointling() {
     if (game.points.gte(game.pointling.cost)) {
         gain(game.pointling.cost.mul(-1));
         game.pointling.amount = game.pointling.amount.add(1);
+        game.pointling.cost = game.pointling.cost.mul(game.pointling.scaling);
     }
 }
 
