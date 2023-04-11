@@ -41,7 +41,7 @@ var game = {
 
 function gain(n) {
     if (n != 0) {
-        game.points = game.points.add(n).mul(game.pointmult);
+        game.points = game.points.add(n.mul(game.pointmult));
     }
 }
 
