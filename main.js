@@ -40,7 +40,9 @@ var game = {
 
 
 function gain(n) {
-    game.points = game.points.add(n).mul(game.pointmult);
+    if (n != 0) {
+        game.points = game.points.add(n).mul(game.pointmult);
+    }
 }
 
 function gainNoMult(n) {
