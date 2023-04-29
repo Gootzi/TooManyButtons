@@ -18,9 +18,10 @@ function saveData() {
 }
 function loadData() {
     var saveString = localStorage.getItem("TMBsavedata");
-    var saveTable = reconstructArray(saveString.split("|"),game);
+    var flattened = saveString.split("|").map(x => parseFloat(x));
+    var saveTable = reconstructArray(flattened, game);
     const splitSave = saveTable.map(x => new OmegaNum(x));
-    game = splitSave
+    game = splitSave;
 }
 function clearData() {
     localStorage.removeItem("TMBsavedata");
