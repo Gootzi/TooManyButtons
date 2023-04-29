@@ -1,43 +1,24 @@
-// FlattenArray courtesy of ChatGPT
-
-
-function flattenArray(arr) {
-  var result = [];
-  for (var i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      result = result.concat(flattenArray(arr[i]));
+function reconstructArray(flattened, ref) {
+  let i = 0;
+  const result = ref.map(item => {
+    if (Array.isArray(item)) {
+      return reconstructArray(flattened, item);
     } else {
-      result.push(arr[i]);
+      return flattened[i++];
     }
-  }
+  });
   return result;
-}
-
-// UpdateArrayValues courtesy of ChatGPT
-
-function updateArrayValues(arr, flatArr) {
-  var flatIndex = 0;
-  function traverseArray(node) {
-    if (Array.isArray(node)) {
-      return node.map(traverseArray);
-    } else {
-      var value = flatArr[flatIndex];
-      flatIndex++;
-      return value;
-    }
-  }
-  return traverseArray(arr);
 }
 
 
 
 function saveData() {
-    var saveString = flattenArray(game).map(x => x.toString()).join('|');
+    var saveString = game.flat(Infinity).map(x => x.toString()).join('|');
     localStorage.setItem("TMBsavedata",saveString);
 }
 function loadData() {
     var saveString = localStorage.getItem("TMBsavedata");
-    var saveTable = updateArrayValues(game,saveString.split("|"));
+    var saveTable = reconstructArray(saveString.split("|"),game);
     const splitSave = saveTable.map(x => new OmegaNum(x));
     game = splitSave
 }
