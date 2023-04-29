@@ -19,8 +19,8 @@ function saveData() {
 function loadData() {
     var saveString = localStorage.getItem("TMBsavedata");
     var flattened = saveString.split("|").map(x => parseFloat(x));
-    Console.log(saveString)
-    Console.log(reconstructArray(flattened, game));
+    console.log(saveString)
+    console.log(reconstructArray(flattened, game));
     var saveTable = reconstructArray(flattened, game);
     const splitSave = saveTable.map(x => new OmegaNum(x));
     game = splitSave;
