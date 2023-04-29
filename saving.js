@@ -28,8 +28,12 @@ function loadData() {
 function clearData() {
     localStorage.removeItem("TMBsavedata");
 }
-if (localStorage.getItem("TMBsavedata")) {
+function loadDataThrottled() {
+  if (localStorage.getItem("TMBsavedata")) {
     loadData();
+  }
 }
+
+setTimeout(loadDataThrottled,1000)
 
 setInterval(saveData,5000)
