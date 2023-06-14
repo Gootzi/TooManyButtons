@@ -12,9 +12,6 @@ function doMap(g) {
     }
 }
 
-console.log(myObject);
-// { 'a': 2, 'b': 4, 'c': 6 }
-}
 
 
 function saveData() {
