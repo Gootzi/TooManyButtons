@@ -1361,6 +1361,7 @@
     if (input===null) return OmegaNum.ZERO.clone();
     if (input instanceof Array) return OmegaNum.fromArray(input);
     if (input instanceof OmegaNum) return new OmegaNum(input);
+    if (!(input.array instanceof Array)) throw Error(invalidArgument+"Expected that property 'array' exists");
     if (input.sign!==undefined&&typeof input.sign!="number") throw Error(invalidArgument+"Expected that property 'sign' is Number");
     var x=new OmegaNum();
     x.array=input.array.slice(0);
