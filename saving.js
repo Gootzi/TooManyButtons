@@ -1,27 +1,12 @@
-function reconstructArray(flattened, ref) {
-  let i = 0;
-  const result = ref.map(item => {
-    if (Array.isArray(item)) {
-      return reconstructArray(flattened, item);
-    } else {
-      return flattened[i++];
-    }
-  });
-  return result;
-}
-
-
-
 function saveData() {
-    var saveString = game.flat(Infinity).map(x => x.toString()).join('|');
+    var saveString = JSON.stringify(game);
     localStorage.setItem("TMBsavedata",saveString);
 }
 function loadData() {
     var saveString = localStorage.getItem("TMBsavedata");
-    var flattened = saveString.split("|").map(x => parseFloat(x));
+    var toload = JSON.parse(saveString);
     console.log(saveString)
-    console.log(saveString.split("|"));
-    var saveTable = reconstructArray(flattened, game);
+    var saveTable = toload;
     const splitSave = saveTable.map(x => new OmegaNum(x));
     game = splitSave;
 }
