@@ -1,9 +1,11 @@
 function doMap(g) {
     // I hate programming this.
     var myObject = g;
+    console.log(g);
 
     for (var key in myObject) {
         if (myObject.hasOwnProperty(key)) {
+            console.log(myObject[key]);
             myObject[key] = new OmegaNum(myObject[key]);
         }
         if (typeof key === "object") {
