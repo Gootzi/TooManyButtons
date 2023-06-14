@@ -7,8 +7,7 @@ function loadData() {
     var toload = JSON.parse(saveString);
     console.log(saveString);
     var saveTable = toload;
-    const splitSave = saveTable.map(x => new OmegaNum(x));
-    game = splitSave;
+    game = toload;
 }
 function clearData() {
     localStorage.removeItem("TMBsavedata");
