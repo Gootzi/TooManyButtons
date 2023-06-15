@@ -8,6 +8,7 @@ var game = {
         spExponent: new OmegaNum(0.6)
     },
     autobuy: {
+        multi: new OmegaNum(1),
         autobuyerPoints: {
             cost: new OmegaNum(500),
             amount: new OmegaNum(0),
@@ -61,9 +62,9 @@ function timeStoreCashout() {
 }
 
 function doAutobuyers() {
-    gain(game.autobuy.autobuyerPoints.amount)
-    game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(game.autobuy.autobuyerPoints2.amount);
-    game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(game.autobuy.autobuyerPoints3.amount);
+    gain(game.autobuy.autobuyerPoints.amount.mul(game.autobuy.multi));
+    game.autobuy.autobuyerPoints.amount = game.autobuy.autobuyerPoints.amount.add(game.autobuy.autobuyerPoints2.amount.mul(game.autobuy.multi));
+    game.autobuy.autobuyerPoints2.amount = game.autobuy.autobuyerPoints2.amount.add(game.autobuy.autobuyerPoints3.amount.mul(game.autobuy.multi));
 }
 
 function buyPointAutobuyer() {
@@ -104,6 +105,7 @@ function buyPointling() {
         gainNoMult(game.pointling.cost.mul(-1));
         game.pointling.amount = game.pointling.amount.add(1);
         game.pointling.cost = game.pointling.cost.mul(game.pointling.scaling);
+        game.autobuyerPoints.multi = game.autobuyerPoints.multi.mul(new OmegaNum(1.01).exp(game.pointling.amount));
     }
 }
 
