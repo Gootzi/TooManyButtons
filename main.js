@@ -126,4 +126,6 @@ function onTick() {
     a3disp.innerHTML = "Pointmaker III<br><br>" + game.autobuy.autobuyerPoints3.amount + "<br>Cost: " + game.autobuy.autobuyerPoints3.cost.floor()
     let multdisp = document.getElementById("multbutton");
     multdisp.innerHTML = "Multiply points by 2<br>Currently: " + game.pointmult + "<br>Cost: " + game.upgrades.mult.cost.floor()
+    let pbdisp = document.getElementById("pbbutton");
+    pbdisp.innerHTML = "Buy a Pointling<br><br>Cost: " + game.pointling.cost.floor()
 }
