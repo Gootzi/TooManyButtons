@@ -128,4 +128,6 @@ function onTick() {
     multdisp.innerHTML = "Multiply points by 2<br>Currently: " + game.pointmult + "<br>Cost: " + game.upgrades.mult.cost.floor()
     let pbdisp = document.getElementById("pbbutton");
     pbdisp.innerHTML = "Buy a Pointling<br><br>Cost: " + game.pointling.cost.floor()
+    let pb1disp = document.getElementById("pointlingtips1");
+    pb1disp.innerHTML = "You have " + game.pointling.amount + " pointlings, granting an x" + game.autobuy.multi +" boost to Pointmakers"
 }
