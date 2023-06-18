@@ -39,6 +39,7 @@ marquee {
     height: 300px;
     width: 200px;
     border: 2px solid white;
+    display: inline-block;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -48,6 +49,16 @@ marquee {
     height: 300px;
     width: 200px;
     border: 2px solid white;
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.pointlingDiv {
+    top: 0px;
+    height: 300px;
+    width: 200px;
+    border: 2px solid white;
+    display: inline-block;
     overflow-x: hidden;
     overflow-y: scroll;
 }
