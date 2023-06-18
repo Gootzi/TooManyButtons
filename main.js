@@ -105,7 +105,7 @@ function buyPointling() {
         gainNoMult(game.pointling.cost.mul(-1));
         game.pointling.amount = game.pointling.amount.add(1);
         game.pointling.cost = game.pointling.cost.mul(game.pointling.scaling);
-        game.autobuy.multi = game.autobuy.multi.mul(new OmegaNum(1.01).exp(game.pointling.amount));
+        game.autobuy.multi = new OmegaNum(1.01).exp(game.pointling.amount);
     }
 }
 
