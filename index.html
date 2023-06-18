@@ -19,16 +19,23 @@
         <button onclick="gain(new OmegaNum(1))">Gain a Point</button>
         <button onclick="gain(new OmegaNum(2))">Gain two Points</button>
         <button onclick="timeStoreCashout()" id="timestorebutton">Time Store<br><br>0 points stored<br>+0 per second</button>
-        <div class="autobuyersDiv">
-            <h2>Automation</h2>
-            <button id="a1button" onclick="buyPointAutobuyer()">Pointmaker I<br><br>You have 1337<br>Costs 1337 points</button>
-            <button id="a2button" onclick="buyPointAutobuyer2()">Pointmaker II<br><br>You have 1337<br>Costs 1337 points</button>
-            <button id="a3button" onclick="buyPointAutobuyer3()">Pointmaker III<br><br>You have 1337<br>Costs 1337 points</button>
-        </div>
-    
-        <div class="upgradesDiv">
-            <h2>Upgrades</h2>
-            <button id="multbutton" onclick="buyPointMult()">Multiply points by 2<br>Currently: X<br><br>Costs Y points</button>
+        <div class="normalparent">
+            <div class="autobuyersDiv">
+                <h2>Automation</h2>
+                <button id="a1button" onclick="buyPointAutobuyer()">Pointmaker I<br><br>You have 1337<br>Costs 1337 points</button>
+                <button id="a2button" onclick="buyPointAutobuyer2()">Pointmaker II<br><br>You have 1337<br>Costs 1337 points</button>
+                <button id="a3button" onclick="buyPointAutobuyer3()">Pointmaker III<br><br>You have 1337<br>Costs 1337 points</button>
+            </div>
+        
+            <div class="upgradesDiv">
+                <h2>Upgrades</h2>
+                <button id="multbutton" onclick="buyPointMult()">Multiply points by 2<br>Currently: X<br><br>Costs Y points</button>
+            </div>
+        
+            <div class="pointlingDiv">
+                <h2>Pointlings</h2>
+                <button id="buybutton" onclick="buyPointling()">Buy a Pointling<br>Costs Y points</button>
+            </div>
         </div>
     </div>
     <div class="infinityDiv">
